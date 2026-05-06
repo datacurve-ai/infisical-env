@@ -1,0 +1,11 @@
+[tools]
+lua = "5.4"
+stylua = "latest"
+
+[tasks.fmt]
+description = "Format Lua files"
+run = "stylua ."
+
+[tasks.lint]
+description = "Check Lua formatting"
+run = "stylua --check ."
