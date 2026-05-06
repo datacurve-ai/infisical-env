@@ -9,3 +9,7 @@ run = "stylua ."
 [tasks.lint]
 description = "Check Lua formatting"
 run = "stylua --check ."
+
+[tasks.test]
+description = "Run Lua unit tests"
+run = "lua tests/mise_env_test.lua"
