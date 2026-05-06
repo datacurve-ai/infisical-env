@@ -134,9 +134,21 @@ local function build_command(ctx, project_root)
 end
 
 local function to_env_vars(data)
-    local source = data.secrets or data
     local env_vars = {}
 
+    if data[1] ~= nil then
+        for _, secret in ipairs(data) do
+            if type(secret) == "table" and secret.key ~= nil and secret.value ~= nil then
+                table.insert(env_vars, {
+                    key = tostring(secret.key),
+                    value = tostring(secret.value),
+                })
+            end
+        end
+        return env_vars
+    end
+
+    local source = data.secrets or data
     for key, value in pairs(source) do
         if type(value) ~= "table" then
             table.insert(env_vars, {
