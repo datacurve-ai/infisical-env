@@ -1,4 +1,4 @@
-# infisical-mise
+# infisical-env
 
 A first-class [mise](https://mise.jdx.dev/) environment plugin that loads
 [Infisical](https://infisical.com/) secrets into `mise env`.
@@ -13,7 +13,7 @@ Add the plugin to your project `mise.toml`:
 
 ```toml
 [plugins]
-infisical-env = "https://github.com/charley/infisical-mise"
+infisical-env = "https://github.com/datacurve-ai/infisical-env"
 
 [tools]
 infisical = "latest"
