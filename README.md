@@ -13,7 +13,7 @@ Add the plugin to your project `mise.toml`:
 
 ```toml
 [plugins]
-infisical-env = "https://github.com/datacurve-ai/infisical-env"
+infisical-env = "https://github.com/datacurve-ai/infisical-env#v0.1.0"
 
 [tools]
 infisical = "latest"
@@ -33,9 +33,6 @@ Initialize Infisical in the project:
 infisical login
 infisical init
 ```
-
-This creates `.infisical.json`, which is safe to commit and is watched by the
-plugin for cache invalidation.
 
 Machine identity and service-token workflows are supported through the standard
 Infisical CLI environment:
