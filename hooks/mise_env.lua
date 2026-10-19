@@ -23,7 +23,7 @@ end
 
 local function dirname(path)
     if path == "/" then
-        return nil
+        return "/"
     end
 
     path = path:gsub("/+$", "")
@@ -62,6 +62,9 @@ local function find_config_file(config_file)
         local candidate = path_join(dir, CONFIG_FILE)
         if file_exists(candidate) then
             return candidate
+        end
+        if dir == "/" then
+            break
         end
         dir = dirname(dir)
     end
